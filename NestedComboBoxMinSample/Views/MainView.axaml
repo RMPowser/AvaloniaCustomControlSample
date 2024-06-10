@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:NestedComboBoxMinSample.ViewModels"
+			 xmlns:cc="clr-namespace:NestedComboBoxMinSample.CustomControls"
+			 xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+             x:Class="NestedComboBoxMinSample.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+
+	<Border BorderThickness="200">
+		<StackPanel Spacing="50">
+			<!--I want this but selecting with mouse doesnt work. Keyboard selecting works fine tho.-->
+			<cc:CustomComboBox HorizontalAlignment="Center">
+				<ComboBoxItem>ComboBoxItem 1</ComboBoxItem>
+				<ComboBoxItem>ComboBoxItem 2</ComboBoxItem>
+				<ComboBoxItem>ComboBoxItem 3</ComboBoxItem>
+				<ComboBoxItem>ComboBoxItem 4</ComboBoxItem>
+			</cc:CustomComboBox>
+
+			<!--Changing the ComboBoxItems to system:String restores mouse selection-->
+			<cc:CustomComboBox HorizontalAlignment="Center">
+				<system:String>String 1</system:String>
+				<system:String>String 2</system:String>
+				<system:String>String 3</system:String>
+				<system:String>String 4</system:String>
+			</cc:CustomComboBox>
+
+			<!--In a mixed one, only the strings work with mouse selection-->
+			<cc:CustomComboBox HorizontalAlignment="Center">
+				<ComboBoxItem>Mixed ComboBoxItem 1</ComboBoxItem>
+				<ComboBoxItem>Mixed ComboBoxItem 2</ComboBoxItem>
+				<system:String>Mixed String 1</system:String>
+				<system:String>Mixed String 2</system:String>
+			</cc:CustomComboBox>
+		</StackPanel>
+	</Border>
+</UserControl>

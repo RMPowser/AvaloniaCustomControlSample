@@ -1,0 +1,22 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:NestedComboBoxMinSample.CustomControls">
+
+	<Design.PreviewWith>
+		<controls:CustomComboBox>
+		</controls:CustomComboBox>
+	</Design.PreviewWith>
+
+	<Style Selector="controls|CustomComboBox">
+		<!-- Set Defaults -->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border>
+					<ComboBox
+						Name="PART_comboBox">
+					</ComboBox>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>
