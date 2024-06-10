@@ -10,6 +10,8 @@ namespace NestedComboBoxMinSample.CustomControls
 	{
 		public ComboBox? comboBox;
 
+		// Couldnt figure out how to do this with template bindings in the xaml,
+		// so i do it here instead.
 		protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
 		{
 			base.OnApplyTemplate(e);
